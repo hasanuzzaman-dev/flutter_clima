@@ -1,8 +1,10 @@
 import 'dart:convert';
 
 import 'package:flutter/material.dart';
+import 'package:flutter_clima/screens/location_screen.dart';
 import 'package:flutter_clima/services/location.dart';
 import 'package:flutter_clima/services/networking.dart';
+import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:http/http.dart' as http;
 
 const apiKey = '7555f9fc90c8c804298742c06723c8ce';
@@ -34,6 +36,15 @@ class _LoadingScreenState extends State<LoadingScreen> {
 
     var weatherData = await networkHelper.getData();
 
+    Navigator.push(
+      context,
+      MaterialPageRoute(
+        builder: (context) {
+          return LocationScreen();
+        },
+      ),
+    );
+
     /* var id = jsonDecode(weatherData)['weather'][0]['id'];
     //main.temp
     var temp = jsonDecode(weatherData)['main']['temp'];
@@ -46,6 +57,13 @@ class _LoadingScreenState extends State<LoadingScreen> {
   @override
   Widget build(BuildContext context) {
     //getData();
-    return Scaffold();
+    return Scaffold(
+      body: Container(
+        child: SpinKitDoubleBounce(
+          color: Colors.white,
+          size: 100.0,
+        ),
+      ),
+    );
   }
 }
