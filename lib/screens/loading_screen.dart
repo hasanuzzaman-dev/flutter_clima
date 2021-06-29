@@ -37,6 +37,7 @@ class _LoadingScreenState extends State<LoadingScreen> {
           color: Colors.white,
           size: 100.0,
         ),
+
       ),
     );
   }
