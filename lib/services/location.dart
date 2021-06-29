@@ -12,7 +12,7 @@ class MyLocation {
       longitude = position.longitude;
       print(position);
     } catch (e) {
-      print(e);
+      print('error $e');
     }
   }
 }

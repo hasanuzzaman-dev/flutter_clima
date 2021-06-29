@@ -30,13 +30,13 @@ class _LocationScreenState extends State<LocationScreen> {
     //main.temp
     setState(() {
       print(weatherData);
-      /*if (weatherData == null) {
+      if (weatherData == null) {
         temperature = 0;
         weatherIcon = 'Error';
         weatherMsg = 'Unable to get weather data';
         city = '';
         return;
-      }*/
+      }
 
       double temp = weatherData['main']['temp'];
       temperature = temp.toInt();
