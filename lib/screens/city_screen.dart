@@ -24,7 +24,7 @@ class _CityScreenState extends State<CityScreen> {
             children: <Widget>[
               Align(
                 alignment: Alignment.topLeft,
-                child: FlatButton(
+                child: OutlinedButton(
                   onPressed: () {},
                   child: Icon(
                     Icons.arrow_back_ios,
@@ -34,7 +34,16 @@ class _CityScreenState extends State<CityScreen> {
               ),
               Container(
                 padding: EdgeInsets.all(20.0),
-                child: null,
+                child: TextField(
+                  style: TextStyle(
+                    color: Colors.black,
+                  ),
+                  decoration: kTextFiledInputDecoration,
+                  onChanged: (value){
+                    print(value);
+                  },
+                  textCapitalization: TextCapitalization.sentences,
+                ),
               ),
               FlatButton(
                 onPressed: () {},
